@@ -1,6 +1,2 @@
 /**app.wxss**/
-@import '/animate.wxss';
- 
-text{
-  font-family:MicroSoft yahei;
-  }
+/* @import '/animate.wxss'; */

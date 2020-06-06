@@ -1,9 +1,11 @@
 //app.js
 App({
   globalData: {
-    serverUrl: "https://fuyinkangfu.com"
+    serverUrl: "https://fuyinkangfu.com",
+    guide:1
   },
   onLaunch: function (q) {
+    // console.log(this.globalData.guide=3)
     console.log("加载页面所带的参数↓")
     console.log(q)
     // console.log(scene)
