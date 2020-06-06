@@ -1,0 +1,5 @@
+<!--pages/test/index.wxml-->
+<view>
+<text>pages/test/index.wxml</text>
+<button  style="width:60%;margin-top:220rpx" type="primary">跳转到index页面</button>
+</view>

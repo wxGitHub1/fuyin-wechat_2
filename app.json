@@ -1,5 +1,6 @@
 {
-  "pages":[
+  "pages":[ 
+    "pages/test/index",
     "pages/index/home"
   ],
   "window":{
