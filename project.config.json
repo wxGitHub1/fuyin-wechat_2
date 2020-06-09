@@ -56,15 +56,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": [
-				{
-					"id": 0,
-					"name": "pages/test/index",
-					"pathName": "pages/test/index",
-					"query": "id=4",
-					"scene": null
-				}
-			]
+			"list": []
 		}
 	}
 }

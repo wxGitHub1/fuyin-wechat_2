@@ -14,8 +14,8 @@ Page({
     vertical: true,
     imgUrls: '/images/img_shjiantou_fds.png',
     clientHeight: '',
-    guide:app.globalData.guide,
-    
+    guide: app.globalData.guide,
+
   },
   // 登录+授权获取手机号
   getPhoneNumber(e) {
@@ -105,34 +105,34 @@ Page({
       }
     })
     wx.checkSession({
-      success() {
-        //session_key 未过期，并且在本生命周期一直有效
-        that.setData({
-          is_longin: true
-        })
-      },
-      fail() {
-        // session_key 已经失效，需要重新执行登录流程
-        // wx.login() //重新登录
-        // var today = new Date();
-        // var today_time = that.FormatDate(today);
-        // console.log(today_time)
-        // if (today_time >= '2020-4-22') {console.log('活动已结束');}else{}
-        var thetime = '2020-04-23 12:00:00';
-        var d = new Date(Date.parse(thetime.replace(/-/g, "/")));
-        var curDate = new Date();
-        if (d <= curDate) {
-          that.setData({
-            is_longin: false
-          })
-        } else {
+        success() {
+          //session_key 未过期，并且在本生命周期一直有效
           that.setData({
             is_longin: true
           })
+        },
+        fail() {
+          // session_key 已经失效，需要重新执行登录流程
+          // wx.login() //重新登录
+          // var today = new Date();
+          // var today_time = that.FormatDate(today);
+          // console.log(today_time)
+          // if (today_time >= '2020-4-22') {console.log('活动已结束');}else{}
+          var thetime = '2020-04-23 12:00:00';
+          var d = new Date(Date.parse(thetime.replace(/-/g, "/")));
+          var curDate = new Date();
+          if (d <= curDate) {
+            that.setData({
+              is_longin: false
+            })
+          } else {
+            that.setData({
+              is_longin: true
+            })
+          }
         }
-      }
-    }),
-    console.log("app传输过来"+this.data.guide)
+      }),
+      console.log("app传输过来" + this.data.guide)
   },
 })
 // Page({

@@ -39,7 +39,7 @@
 	</block>
 	<block wx:else>
 		<view class="longin-page" style="height: {{clientHeight+'px'}}">
-    <view class="logoBgImg page-img {{clientHeight>736?'logoBgImg2':''}}"></view>
+			<view class="logoBgImg page-img {{clientHeight>736?'logoBgImg2':''}}"></view>
 			<view class="page1-but {{clientHeight>736?'top-but':''}}">
 				<button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" id="login-but">查看影响性</button>
 			</view>
