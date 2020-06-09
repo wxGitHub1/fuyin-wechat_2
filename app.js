@@ -10,6 +10,7 @@ App({
     console.log(q)
     // console.log(scene)
     var id = q.query.id
+    this.globalData.guide=id
     if (q.scene) {
       const scene = decodeURIComponent(q.scene)
       // wx.setStorageSync('doctorId', scene)

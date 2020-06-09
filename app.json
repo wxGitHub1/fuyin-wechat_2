@@ -1,7 +1,6 @@
 {
   "pages":[ 
-    "pages/test/index",
-    "pages/index/home"
+    "pages/test/index"
   ],
   "window":{
     "navigationStyle": "custom",

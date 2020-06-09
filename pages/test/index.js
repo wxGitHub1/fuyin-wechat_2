@@ -15,29 +15,8 @@ Page({
     imgUrls: '/images/img_shjiantou_fds.png',
     clientHeight: '',
     guide:app.globalData.guide,
-    // longitude: 108.9483207500,
-    // latitude: 34.3491318800,
-    // covers: [{
-    //   latitude: 34.3491318800,
-    //   longitude: 108.9483207500,
-    //   iconPath: '/images/location.png'
-    // }]
+    
   },
-  //导航
-  // daohang: function () {
-  //   var that = this
-  //   wx.getLocation({
-  //     type: 'wgs84',
-  //     success: function (res) {
-  //       wx.openLocation({ //​使用微信内置地图查看位置。
-  //         latitude: that.data.latitude, //要去的纬度-地址
-  //         longitude: that.data.longitude, //要去的经度-地址
-  //         name: "经开万科中心",
-  //         address: '未央区未央路301号'
-  //       })
-  //     }
-  //   })
-  // },
   // 登录+授权获取手机号
   getPhoneNumber(e) {
     var that = this
