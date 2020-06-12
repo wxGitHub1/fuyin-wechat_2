@@ -15,7 +15,6 @@ Page({
     imgUrls: '/images/img_shjiantou_fds.png',
     clientHeight: '',
     guide: app.globalData.guide,
-
   },
   // 登录+授权获取手机号
   getPhoneNumber(e) {
@@ -31,10 +30,12 @@ Page({
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           console.log("code:" + res.code)
           wx.request({
-            url: 'https://fuyinkangfu.com:8085/wx/wxGetPhone',
+            // url: 'https://fuyinkangfu.com:8085/wx/wxGetPhone',
+            url: 'http://192.168.1.108:8086/wx/wxGetPhoneForNet',
             method: "POST",
             data: {
-              doctorId: wx.getStorageSync('doctorId'),
+              // doctorId: wx.getStorageSync('doctorId'),
+              doctorId: that.data.guide,
               js_code: res.code,
               encrypted: e.detail.encryptedData,
               iv: e.detail.iv,
@@ -51,6 +52,20 @@ Page({
               })
               that.setData({
                 is_longin: true
+              })
+              wx.request({
+                url: 'http://117.34.105.87:88/api/Community/InsertScan',
+                method: "POST",
+                data: {
+                  "phone":res.data.data.phoneNumber,
+                  "direct":that.data.guide
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success (seccess) {
+                  console.log(seccess)
+                }
               })
             },
             fail: function (err) {
