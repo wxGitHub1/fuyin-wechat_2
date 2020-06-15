@@ -30,8 +30,8 @@ Page({
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           console.log("code:" + res.code)
           wx.request({
-            // url: 'https://fuyinkangfu.com:8085/wx/wxGetPhone',
-            url: 'http://192.168.1.108:8086/wx/wxGetPhoneForNet',
+            url: 'https://fuyinkangfu.com:8085/wx/wxGetPhoneForNet',
+            // url: 'http://192.168.1.108:8086/wx/wxGetPhoneForNet',
             method: "POST",
             data: {
               // doctorId: wx.getStorageSync('doctorId'),
@@ -44,6 +44,13 @@ Page({
               "Content-Type": "application/json"
             },
             success: function (res) {
+              if (res.data.returnCode != 0) {
+                wx.showToast({
+                  title: "请重新授权！",
+                  icon: 'warning',
+                  duration: 2000
+                }) 
+              } else {
               console.log(res)
               wx.showToast({
                 title: '授权成功！',
@@ -53,20 +60,22 @@ Page({
               that.setData({
                 is_longin: true
               })
-              wx.request({
-                url: 'http://117.34.105.87:88/api/Community/InsertScan',
-                method: "POST",
-                data: {
-                  "phone":res.data.data.phoneNumber,
-                  "direct":that.data.guide
-                },
-                header: {
-                  'content-type': 'application/json' // 默认值
-                },
-                success (seccess) {
-                  console.log(seccess)
-                }
-              })
+              // wx.request({
+              //   //url: 'https://www.fuyinkangfu.cn/api/Community/InsertScan',
+              //   url: 'https://fuyinkangfu.com/api/Community/InsertScan',
+              //   method: "POST",
+              //   data: {
+              //     "phone":res.data.data.phoneNumber,
+              //     "direct":that.data.guide
+              //   },
+              //   header: {
+              //     'content-type': 'application/json' // 默认值
+              //   },
+              //   success (seccess) {
+              //     console.log(seccess)
+              //   }
+              // })
+            }
             },
             fail: function (err) {
               console.log(err)
@@ -123,7 +132,7 @@ Page({
         success() {
           //session_key 未过期，并且在本生命周期一直有效
           that.setData({
-            is_longin: true
+            is_longin: false
           })
         },
         fail() {

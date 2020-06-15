@@ -59,9 +59,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "区域三",
+					"name": "pages/test/index",
 					"pathName": "pages/test/index",
-					"query": "id=2",
+					"query": "id=3",
 					"scene": null
 				}
 			]

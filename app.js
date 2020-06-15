@@ -2,7 +2,7 @@
 App({
   globalData: {
     serverUrl: "https://fuyinkangfu.com",
-    guide: 2
+    guide: 1
   },
   onLaunch: function (q) {
     console.log(q.query.id != undefined)
