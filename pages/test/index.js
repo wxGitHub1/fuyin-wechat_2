@@ -47,18 +47,18 @@ Page({
                   title: "请重新授权！",
                   icon: 'warning',
                   duration: 2000
-                }) 
+                })
               } else {
-              console.log(res)
-              wx.showToast({
-                title: '授权成功！',
-                icon: 'success',
-                duration: 2000
-              })
-              that.setData({
-                is_longin: true
-              })
-            }
+                console.log(res)
+                wx.showToast({
+                  title: '授权成功！',
+                  icon: 'success',
+                  duration: 2000
+                })
+                that.setData({
+                  is_longin: true
+                })
+              }
             },
             fail: function (err) {
               console.log(err)
@@ -141,6 +141,17 @@ Page({
       }),
       console.log("app传输过来" + this.data.guide)
   },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function (res) {
+    var that=this
+    return {
+      title: '让每个孩子更健康的发育',
+      path: '/pages/test/index?id='+that.data.guide,
+      imageUrl: '/images/IMG_20200616_155844.jpg' //这个是分享的图片
+    }
+  }
 })
 // Page({
 //   /**
@@ -191,11 +202,4 @@ Page({
 //   onReachBottom: function () {
 
 //   },
-
-//   /**
-//    * 用户点击右上角分享
-//    */
-//   onShareAppMessage: function () {
-
-//   }
 // })
