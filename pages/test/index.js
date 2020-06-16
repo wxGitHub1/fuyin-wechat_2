@@ -31,10 +31,8 @@ Page({
           console.log("code:" + res.code)
           wx.request({
             url: 'https://fuyinkangfu.com:8085/wx/wxGetPhoneForNet',
-            // url: 'http://192.168.1.108:8086/wx/wxGetPhoneForNet',
             method: "POST",
             data: {
-              // doctorId: wx.getStorageSync('doctorId'),
               doctorId: that.data.guide,
               js_code: res.code,
               encrypted: e.detail.encryptedData,
@@ -60,21 +58,6 @@ Page({
               that.setData({
                 is_longin: true
               })
-              // wx.request({
-              //   //url: 'https://www.fuyinkangfu.cn/api/Community/InsertScan',
-              //   url: 'https://fuyinkangfu.com/api/Community/InsertScan',
-              //   method: "POST",
-              //   data: {
-              //     "phone":res.data.data.phoneNumber,
-              //     "direct":that.data.guide
-              //   },
-              //   header: {
-              //     'content-type': 'application/json' // 默认值
-              //   },
-              //   success (seccess) {
-              //     console.log(seccess)
-              //   }
-              // })
             }
             },
             fail: function (err) {
@@ -132,7 +115,7 @@ Page({
         success() {
           //session_key 未过期，并且在本生命周期一直有效
           that.setData({
-            is_longin: false
+            is_longin: true
           })
         },
         fail() {
