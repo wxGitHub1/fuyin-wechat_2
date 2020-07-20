@@ -125,7 +125,7 @@ Page({
           // var today_time = that.FormatDate(today);
           // console.log(today_time)
           // if (today_time >= '2020-4-22') {console.log('活动已结束');}else{}
-          var thetime = '2020-07-20 14:00:00';
+          var thetime = '2020-07-17 14:00:00';
           var d = new Date(Date.parse(thetime.replace(/-/g, "/")));
           var curDate = new Date();
           if (d <= curDate) {

@@ -22,7 +22,8 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.4",
@@ -63,6 +64,20 @@
 					"name": "pages/test/index",
 					"pathName": "pages/test/index",
 					"query": "id=3",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "111",
+					"pathName": "pages/test/index",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/index",
+					"pathName": "pages/test/index",
+					"query": "id=2",
 					"scene": null
 				}
 			]
